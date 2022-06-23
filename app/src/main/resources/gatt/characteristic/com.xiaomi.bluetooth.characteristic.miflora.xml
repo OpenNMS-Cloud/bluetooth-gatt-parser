@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="Miflora" approved="No"
+    last-modified="2018-01-29" type="com.xiaomi.bluetooth.characteristic.miflora" uuid="1A01"
+    xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd">
+    <Value>
+        <Field name="Temperature" system="true">
+            <Format>uint24</Format>
+            <Requirement>Mandatory</Requirement>
+            <DecimalExponent>-1</DecimalExponent>
+            <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+        </Field>
+        <Field name="Sunlight" system="true">
+            <Format>uint32</Format>
+            <Requirement>Mandatory</Requirement>
+            <Unit>org.bluetooth.unit.illuminance.lux</Unit>
+        </Field>
+        <Field name="Moisture" system="true">
+            <Format>uint8</Format>
+            <Requirement>Mandatory</Requirement>
+            <Unit>org.bluetooth.unit.percentage</Unit>
+        </Field>
+        <Field name="Fertility" system="true">
+            <Format>uint16</Format>
+            <Requirement>Mandatory</Requirement>
+            <Unit>org.bluetooth.unit.electric_conductance.siemens</Unit>
+        </Field>
+    </Value>
+</Characteristic>

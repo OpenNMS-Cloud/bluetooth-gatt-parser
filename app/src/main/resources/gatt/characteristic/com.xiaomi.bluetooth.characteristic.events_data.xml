@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Characteristic
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="Xiaomi advertised events data" approved="No"
+    last-modified="2018-02-01" type="com.xiaomi.bluetooth.characteristic.events_data"
+    uuid="FE95FE95" xsi:noNamespaceSchemaLocation="http://schemas.bluetooth.org/Documents/characteristic.xsd">
+    <Value>
+        <Field name="Flags">
+            <Requirement>Mandatory</Requirement>
+            <Format>16bit</Format>
+            <BitField>
+                <Bit name="EventID" index="0" size="16">
+                    <Enumerations>
+                        <Enumeration key="4" requires="C4" value="Temperature flag" />
+                        <!-- Mi Smart Kettle-->
+                        <Enumeration key="5" requires="C5" value="Temperature and status" />
+                        <Enumeration key="6" requires="C6" value="Humidity flag" />
+                        <Enumeration key="7" requires="C7" value="Sunlight flag" />
+                        <Enumeration key="8" requires="C8" value="Moisture flag" />
+                        <Enumeration key="9" requires="C9" value="Fertility flag" />
+                        <Enumeration key="10" requires="C10" value="Battery flag" />
+                        <Enumeration key="13" requires="C4,C6"
+                            value="Temperature and humidity flag" />
+                    </Enumerations>
+                </Bit>
+            </BitField>
+        </Field>
+        <Field name="Event" system="true">
+            <Requirement>Mandatory</Requirement>
+            <Format>uint8</Format>
+        </Field>
+        <Field name="Temperature">
+            <Requirement>C4</Requirement>
+            <Format>uint16</Format>
+            <DecimalExponent>-1</DecimalExponent>
+            <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+        </Field>
+        <Field name="Status">
+            <Requirement>C5</Requirement>
+            <Format>uint8</Format>
+        </Field>
+        <Field name="Temperature">
+            <Requirement>C5</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.thermodynamic_temperature.degree_celsius</Unit>
+        </Field>
+        <Field name="Humidity">
+            <Requirement>C6</Requirement>
+            <Format>uint16</Format>
+            <DecimalExponent>-1</DecimalExponent>
+            <Unit>org.bluetooth.unit.percentage</Unit>
+        </Field>
+        <Field name="Sunlight">
+            <Requirement>C7</Requirement>
+            <Format>uint24</Format>
+            <Unit>org.bluetooth.unit.illuminance.lux</Unit>
+        </Field>
+        <Field name="Moisture">
+            <Requirement>C8</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.percentage</Unit>
+        </Field>
+        <Field name="Fertility">
+            <Requirement>C9</Requirement>
+            <Format>uint16</Format>
+            <Unit>org.bluetooth.unit.electric_conductance.siemens</Unit>
+        </Field>
+        <Field name="Battery">
+            <Requirement>C10</Requirement>
+            <Format>uint8</Format>
+            <Unit>org.bluetooth.unit.percentage</Unit>
+        </Field>
+    </Value>
+</Characteristic>

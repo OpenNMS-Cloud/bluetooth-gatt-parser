@@ -3,8 +3,10 @@ pluginManagement {
     this.apply from: './platform.gradle'
     repositories {
         mavenLocal()
+        mavenCentral()
         gradlePluginPortal()
         jcenter()
+        google()
     }
 
     resolutionStrategy {
